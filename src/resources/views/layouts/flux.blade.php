@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="/libs/cropperjs/cropperjs.css">
     <link rel="stylesheet" href="/libs/flag-icons/css/flag-icons.min.css">
- 
+
     {{-- Inter font family... --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

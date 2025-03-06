@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="/vendor/manta/default/img/favicon.png">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
     @fluxAppearance
 </head>
 
@@ -16,11 +17,11 @@
 
     {{ $slot }}
 
+    @livewireScripts
+    @fluxScripts
     <flux:toast position="top right" />
 
-    @fluxScripts
     @stack('scripts')
-    <!-- Dubbel aanroepen van @fluxScripts is niet nodig, daarom verwijderen we de tweede -->
 </body>
 
 </html>

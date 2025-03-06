@@ -5,11 +5,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Artisan;
-use App\Livewire\Manta\Staff\StaffLogin;
-use App\Livewire\Manta\Staff\StaffPasswordForgot;
-use App\Livewire\Manta\Staff\StaffPasswordReset;
+
 use Illuminate\Auth\Access\AuthorizationException;
 use App\Models\User;
+use Darvis\Manta\Livewire\Staff\StaffLogin;
+use Darvis\Manta\Livewire\Staff\StaffPasswordForgot;
+use Darvis\Manta\Livewire\Staff\StaffPasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Verified;
 
