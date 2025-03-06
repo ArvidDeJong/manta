@@ -1,16 +1,3 @@
-<?php
-
-namespace App\Livewire\Manta\Staff;
-
-use Darvis\Manta\Models\Staff;
-use Darvis\Manta\Traits\MantaPagerowTrait;
-
-new class extends \Livewire\Volt\Component {
-    public Staff $item;
-
-    use MantaPagerowTrait;
-};
-?>
 <flux:table.row data-id="{{ $item->id }}">
     <flux:table.cell>{{ $tablekey + 1 }}</flux:table.cell>
     <flux:table.cell>{{ $item->name }}</flux:table.cell>

@@ -28,8 +28,7 @@
 
         <flux:table.rows>
             @foreach ($items as $key => $item)
-                <livewire:manta.staff.staff-list-row :$fields :$item :route_name="$this->route_name" :$moduleClass :tablekey="$key"
-                    :key="$item->id">
+                @livewire('manta::staff.staff-list-row', ['fields' => $fields, 'item' => $item, 'route_name' => $this->route_name, 'moduleClass' => $moduleClass, 'tablekey' => $key], key($item->id))
             @endforeach
         </flux:table.rows>
     </flux:table>
