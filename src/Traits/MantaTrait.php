@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Darvis\Manta\Models\Option;
+use Flux\Flux;
 use Illuminate\Support\Facades\Schema;
 use Livewire\Attributes\Locked;
 
@@ -226,7 +227,7 @@ trait MantaTrait
 
     public function deleteConfirm($id)
     {
-        Manta::modal('member-remove')->close();
+        Flux::modal('member-remove')->close();
 
         $this->moduleClass::where('id', $id)->update(['deleted_by' => auth('staff')->user()->name]);
         $this->moduleClass::find($id)->delete();
@@ -234,7 +235,7 @@ trait MantaTrait
 
     public function restoreConfirm($id)
     {
-        Manta::modal('member-restore')->close();
+        Flux::modal('member-restore')->close();
 
         $this->moduleClass::withTrashed()->where('id', $id)->restore();
         $this->trashed = count($this->moduleClass::onlyTrashed()->get());
@@ -289,7 +290,7 @@ trait MantaTrait
             Option::set($key,     $this->settingsArr[$key], $this->moduleClass, $this->locale);
         }
 
-        Manta::toast('Opgeslagen', duration: 1000, variant: 'success');
+        Flux::toast('Opgeslagen', duration: 1000, variant: 'success');
     }
 
     public function translate()
@@ -305,9 +306,9 @@ trait MantaTrait
                     }
                 }
             };
-            Manta::toast('Vertalingen toegepast', duration: 1000, variant: 'success');
+            Flux::toast('Vertalingen toegepast', duration: 1000, variant: 'success');
         } else {
-            Manta::toast('Geen vertaal abonnement', duration: 1000, variant: 'danger');
+            Flux::toast('Geen vertaal abonnement', duration: 1000, variant: 'danger');
         }
     }
 }

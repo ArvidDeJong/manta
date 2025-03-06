@@ -14,17 +14,14 @@ trait StaffTrait
     {
         $this->route_name = 'staff';
         $this->route_list = route($this->route_name . '.list');
-        $this->config = module_config('Staff');
+        $this->config = manta_config('Staff');
         $this->fields = $this->config['fields'];
         $this->tab_title = isset($this->config['tab_title']) ? $this->config['tab_title'] : null;
-        $this->moduleClass = 'Manta\Models\Staff';
+        $this->moduleClass = 'Darvis\Manta\Models\Staff';
     }
 
     public ?Staff $item = null;
     public ?Staff $itemOrg = null;
-
-
-
 
     public ?string $name = null;
     public ?string $email = null;
