@@ -3,6 +3,7 @@
     "description": "Een krachtig, out-of-the-box Content Management Systeem voor Laravel",
     "type": "library",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Darvis",
@@ -11,8 +12,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/support": "^11",
-        "laravel/framework": "^11.0",
+        "illuminate/support": "^11|^12",
+        "laravel/framework": "^11.0|^12.0",
         "livewire/livewire": "^3.0",
         "laravel/jetstream": "^5.0"
     },

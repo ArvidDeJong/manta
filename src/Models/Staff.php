@@ -2,26 +2,15 @@
 
 namespace Darvis\Manta\Models;
 
-use Manta\Notifications\StaffResetPasswordNotification;
-
-use Darvis\Manta\Traits\HasUploadsTrait;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Auth;
-use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Jetstream\HasTeams;
-use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Staff  extends Authenticatable
+class Staff extends Authenticatable
 {
-    use HasApiTokens;
-    use HasFactory;
-    use HasProfilePhoto;
-    use HasTeams;
-    use Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
     use SoftDeletes;
 
 
