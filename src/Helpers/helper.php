@@ -11,7 +11,7 @@ if (!function_exists('cms_config')) {
         if (File::exists($pathTheme)) {
             return include($pathTheme);
         } elseif (!File::exists($path)) {
-            return config('manta');
+            return config('manta_cms');
         }
 
         return include($path);
