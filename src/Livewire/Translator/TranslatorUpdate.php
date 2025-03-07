@@ -43,7 +43,7 @@ class TranslatorUpdate extends Component
 
     public function render()
     {
-        return view('livewire.manta.translator.translator-update')->title('Vertaling aanpassen');
+        return view('manta::livewire.translator.translator-update')->title('Vertaling aanpassen');
     }
 
 

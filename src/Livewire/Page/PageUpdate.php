@@ -57,7 +57,7 @@ class PageUpdate extends Component
 
     public function render()
     {
-        return view('livewire.manta.default.manta-default-update')->title($this->config['module_name']['single'] . ' aanpassen');
+        return view('manta::default.manta-default-update')->title($this->config['module_name']['single'] . ' aanpassen');
     }
 
     public function save()

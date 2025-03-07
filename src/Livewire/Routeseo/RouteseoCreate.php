@@ -29,7 +29,7 @@ class RouteseoCreate extends Component
 
     public function render()
     {
-        return view('livewire.manta.default.manta-default-create')->title($this->config['module_name']['single'] . ' toevoegen');
+        return view('manta::default.manta-default-create')->title($this->config['module_name']['single'] . ' toevoegen');
     }
 
     public function save()

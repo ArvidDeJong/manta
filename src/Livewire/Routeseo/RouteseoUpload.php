@@ -25,6 +25,6 @@ class RouteseoUpload extends Component
 
     public function render()
     {
-        return view('livewire.manta.default.manta-default-upload')->title($this->config['module_name']['single'] . ' bestanden');
+        return view('manta::default.manta-default-upload')->title($this->config['module_name']['single'] . ' bestanden');
     }
 }

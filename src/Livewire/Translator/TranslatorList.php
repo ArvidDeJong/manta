@@ -48,7 +48,7 @@ class TranslatorList extends Component
     {
         $this->breadcrumb = [
             ["title" => $this->breadcumbHomeName, "url" => route('cms.dashboard')],
-            ["title" => $this->moduleTitle],
+            ["title" => 'Talen'],
         ];
     }
 

@@ -35,7 +35,7 @@ class RouteseoRead extends Component
 
     public function render()
     {
-        return view('livewire.manta.default.manta-default-read')->title($this->config['module_name']['single'] . ' bekijken');
+        return view('manta::default.manta-default-read')->title($this->config['module_name']['single'] . ' bekijken');
     }
 
 
