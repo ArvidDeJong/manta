@@ -172,6 +172,6 @@ class UploadDropzone extends Component
 
     public function render()
     {
-        return view('livewire.manta.upload.upload-dropzone');
+        return view('manta::livewire.upload.upload-dropzone');
     }
 }

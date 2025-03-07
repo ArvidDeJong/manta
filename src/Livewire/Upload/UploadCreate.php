@@ -67,6 +67,6 @@ class UploadCreate extends Component
 
     public function render()
     {
-        return view('livewire.manta.upload.upload-create');
+        return view('manta::livewire.upload.upload-create');
     }
 }

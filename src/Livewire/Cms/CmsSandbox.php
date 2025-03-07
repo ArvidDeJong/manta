@@ -19,9 +19,9 @@ class CmsSandbox extends Component
 
     public function render()
     {
+        $result = [];
 
-
-        return view('livewire.manta.cms.cms-sandbox', compact('result'))->title('Zandbak');
+        return view('manta::livewire.cms.cms-sandbox', compact('result'))->title('Zandbak');
     }
 
     public function getBreadcrumb()

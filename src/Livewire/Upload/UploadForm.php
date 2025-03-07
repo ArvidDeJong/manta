@@ -52,6 +52,6 @@ class UploadForm extends Component
 
     public function render()
     {
-        return view('livewire.manta.upload.upload-form');
+        return view('manta::livewire.upload.upload-form');
     }
 }

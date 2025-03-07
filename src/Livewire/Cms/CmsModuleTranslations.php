@@ -63,7 +63,7 @@ class CmsModuleTranslations extends Component
 
     public function render()
     {
-        return view('livewire.manta.cms.cms-module-translations')->title('Vertalingen overzicht');
+        return view('manta::livewire.cms.cms-module-translations')->title('Vertalingen overzicht');
     }
 
     public function getBreadcrumb()

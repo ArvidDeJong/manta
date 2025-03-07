@@ -50,6 +50,6 @@ class CmsAlert extends Component
 
     public function render()
     {
-        return view('livewire.manta.cms.cms-alert');
+        return view('manta::livewire.cms.cms-alert');
     }
 }

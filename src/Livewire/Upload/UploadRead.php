@@ -34,7 +34,7 @@ class UploadRead extends Component
 
     public function render()
     {
-        return view('livewire.manta.upload.upload-read')->title('Upload bekijken');
+        return view('manta::livewire.upload.upload-read')->title('Upload bekijken');
     }
 
     public function getBreadcrumb()

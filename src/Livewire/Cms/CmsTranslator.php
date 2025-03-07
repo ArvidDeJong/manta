@@ -35,7 +35,7 @@ class CmsTranslator extends Component
 
     public function render()
     {
-        return view('livewire.manta.cms.cms-translator');
+        return view('manta::livewire.cms.cms-translator');
     }
 
     public function save()

@@ -36,6 +36,6 @@ class UploadList extends Component
         }
         $items = $obj->paginate(20);
 
-        return view('livewire.manta.upload.upload-list', compact('items'))->title('Uploads');
+        return view('manta::livewire.upload.upload-list', compact('items'))->title('Uploads');
     }
 }

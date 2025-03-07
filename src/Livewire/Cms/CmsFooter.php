@@ -8,6 +8,6 @@ class CmsFooter extends Component
 {
     public function render()
     {
-        return view('livewire.manta.cms.cms-footer');
+        return view('manta::livewire.cms.cms-footer');
     }
 }

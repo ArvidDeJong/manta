@@ -52,7 +52,7 @@ class ChatgptChat extends Component
 
     public function render()
     {
-        return view('livewire.manta.chatgpt.chatgpt-chat');
+        return view('manta::livewire.chatgpt.chatgpt-chat');
     }
 
     public function getBreadcrumb()

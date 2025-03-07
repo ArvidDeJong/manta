@@ -41,7 +41,7 @@ class TranslatorList extends Component
     {
         $items = scandir($this->directory . $this->directory_add);
 
-        return view('livewire.manta.translator.translator-list', ['items' => $items])->title('Vertaal bestanden');
+        return view('manta::livewire.translator.translator-list', ['items' => $items])->title('Vertaal bestanden');
     }
 
     public function getBreadcrumb()

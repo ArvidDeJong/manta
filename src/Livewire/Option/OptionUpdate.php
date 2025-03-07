@@ -128,7 +128,7 @@ class OptionUpdate extends Component
         $this->markers[] = ['id' => 'general', 'latitude' => (float)$this->DEFAULT_LATITUDE, 'longitude' => (float)$this->DEFAULT_LONGITUDE, 'title' => 'Algemene instellingen', 'draggable' => true];
         $this->DEFAULT_LATITUDE = $this->DEFAULT_LATITUDE;
         $this->DEFAULT_LONGITUDE = $this->DEFAULT_LONGITUDE;
-        return view('livewire.manta.cms.cms-options')->title('Instellingen');
+        return view('manta::livewire.cms.cms-options')->title('Instellingen');
     }
 
     public function updatedGOOGLEMAPSZOOM()

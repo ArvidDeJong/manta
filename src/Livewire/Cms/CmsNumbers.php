@@ -63,7 +63,7 @@ class CmsNumbers extends Component
             }
         }
 
-        return view('livewire.manta.cms.cms-numbers', ['translations' => $translations, 'translations_total' => $translations_total, 'routes' => $routes, 'routes_translated' => $routes_translated])->title('Website gegevens');
+        return view('manta::livewire.cms.cms-numbers', ['translations' => $translations, 'translations_total' => $translations_total, 'routes' => $routes, 'routes_translated' => $routes_translated])->title('Website gegevens');
     }
 
     public function getBreadcrumb()

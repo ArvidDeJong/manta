@@ -8,6 +8,6 @@ class CmsDashboard extends Component
 {
     public function render()
     {
-        return view('livewire.manta.cms.cms-dashboard')->title('Dashboard');
+        return view('manta::livewire.cms.cms-dashboard')->title('Dashboard');
     }
 }

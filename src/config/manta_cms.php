@@ -316,7 +316,7 @@ return [
             "menu" => "tools"
         ],
         [
-            "active" => false,
+            "active" => true,
             "name" => "chatgpt",
             "routename" => "chatgpt",
             "title" => "ChatGPT",

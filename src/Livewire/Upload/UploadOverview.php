@@ -78,7 +78,7 @@ class UploadOverview extends Component
             $this->thumbnails = $thumbnails;
         }
 
-        return view('livewire.manta.upload.upload-overview');
+        return view('manta::livewire.upload.upload-overview');
     }
 
 

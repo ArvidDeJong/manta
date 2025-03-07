@@ -68,6 +68,6 @@ class CmsInlineEditor extends Component
 
     public function render()
     {
-        return view('livewire.manta.cms.cms-inline-editor');
+        return view('manta::livewire.cms.cms-inline-editor');
     }
 }

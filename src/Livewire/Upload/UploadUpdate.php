@@ -73,7 +73,7 @@ class UploadUpdate extends Component
     public function render()
     {
         // dd($this->data, $this->data_content);
-        return view('livewire.manta.upload.upload-update')->title('Upload');
+        return view('manta::livewire.upload.upload-update')->title('Upload');
     }
 
     public function save()

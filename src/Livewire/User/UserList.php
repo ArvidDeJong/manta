@@ -34,6 +34,6 @@ class UserList extends Component
         $obj = $this->applySorting($obj);
         $obj = $this->applySearch($obj);
         $items = $obj->paginate(50);
-        return view('livewire.manta.user.user-list', ['items' => $items])->title('Klanten');
+        return view('manta::livewire.user.user-list', ['items' => $items])->title('Klanten');
     }
 }

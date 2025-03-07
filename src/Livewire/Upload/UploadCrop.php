@@ -34,7 +34,7 @@ class UploadCrop extends Component
 
     public function render()
     {
-        return view('livewire.manta.upload.upload-crop')->title('Upload crop');
+        return view('manta::livewire.upload.upload-crop')->title('Upload crop');
     }
 
 
