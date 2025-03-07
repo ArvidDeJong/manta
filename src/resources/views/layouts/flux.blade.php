@@ -8,10 +8,10 @@
     <meta name="author" content="Darvis | Arvid de Jong | info@arvid.nl">
     <link rel="icon" type="image/png" href="/vendor/manta/default/img/favicon.png">
 
-    <link rel="stylesheet" href="/libs/fontawesome-pro-6.5.2-web/css/all.css">
+    <link rel="stylesheet" href="/vendor/manta/libs/fontawesome-pro-6.5.2-web/css/all.css">
 
-    <link rel="stylesheet" href="/libs/cropperjs/cropperjs.css">
-    <link rel="stylesheet" href="/libs/flag-icons/css/flag-icons.min.css">
+    <link rel="stylesheet" href="/vendor/manta/libs/cropperjs/cropperjs.css">
+    <link rel="stylesheet" href="/vendor/manta/libs/flag-icons/css/flag-icons.min.css">
 
     {{-- Inter font family... --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,10 +34,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
 
-    <script src="/libs/cropperjs/cropperjs.js"></script>
-    <script src="/libs/sortablejs/sortablejs.min.js"></script>
+    <script src="/vendor/manta/libs/cropperjs/cropperjs.js"></script>
+    <script src="/vendor/manta/libs/sortablejs/sortablejs.min.js"></script>
 
-    <script src="/libs/tinymce-7.6.0/js/tinymce/tinymce.min.js"></script>
+    <script src="/vendor/manta/libs/tinymce-7.6.0/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="/vendor/manta/js/passive-events-tinymce.js"></script>
 
     <script>

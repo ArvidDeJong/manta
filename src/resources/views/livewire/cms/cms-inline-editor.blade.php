@@ -30,8 +30,8 @@
         @endif
 
         @push('styles')
-            <script src="/libs/tinymce-7.6.0/js/tinymce/tinymce.min.js"></script>
-            <script type="text/javascript" src="/vendor/manta/js/passive-events-tinymce.js"></script>
+            <script src="/vendor/manta/libs/tinymce-7.6.0/js/tinymce/tinymce.min.js"></script>
+            <script type="text/javascript" src="/vendor/manta/default/js/passive-events-tinymce.js"></script>
 
             <script>
                 document.addEventListener("livewire:init", function() {
