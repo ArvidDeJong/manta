@@ -31,7 +31,25 @@ class CmsModuleTranslations extends Component
                     $arr[$module['title']] = ['to_translate' => 0, 'total' => 0];
 
                     $moduleName = Ucfirst($module['name']);
-                    $className = 'Manta\Models\\' . $moduleName; // Dynamisch de volledige klassennaam maken
+
+                    // Skip de loop als de modulenaam "Mailtrap" is
+                    if ($moduleName === "Mailtrap") {
+                        continue;
+                    }
+
+                    // Probeer eerst de Darvis\Manta\Models namespace
+                    $className = 'Darvis\Manta\Models\\' . $moduleName;
+
+                    // Controleer of de klasse bestaat, zo niet, probeer de alternatieve namespace
+                    if (!class_exists($className)) {
+                        $className = 'Manta\Models\\' . $moduleName;
+
+                        // Als de klasse nog steeds niet bestaat, ga door naar de volgende module
+                        if (!class_exists($className)) {
+                            continue;
+                        }
+                    }
+
                     $items = $className::where('locale', getLocaleManta())->get();
                     // $arr[$module['title']]['to_translate'] = 0;
                     // $arr[$module['title']]['total'] = 0;

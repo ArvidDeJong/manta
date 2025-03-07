@@ -33,8 +33,7 @@
 
              <flux:table.rows>
                  @foreach ($items as $item)
-                     <livewire:manta.routeseo.routeseo-list-row :$fields :$item :route_name="$this->route_name" :$moduleClass
-                         :key="$item->id">
+                     @livewire('manta::routeseo.routeseo-list-row', ['fields' => $fields, 'item' => $item, 'route_name' => $this->route_name, 'moduleClass' => $moduleClass], key($item->id))
                  @endforeach
              </flux:table.rows>
          </flux:table>

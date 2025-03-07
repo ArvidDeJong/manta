@@ -1,18 +1,5 @@
-<?php
-
-namespace App\Livewire\Manta\Routeseo;
-
-use Darvis\Manta\Models\Routeseo;
-use Darvis\Manta\Traits\MantaPagerowTrait;
-
-new class extends \Livewire\Volt\Component {
-    public Routeseo $item;
-
-    use MantaPagerowTrait;
-};
-?>
 <flux:table.row data-id="{{ $item->id }}">
-    @if ($this->fields['uploads']['active'])
+    @if ($fields['uploads']['active'])
         <flux:table.cell><x-manta.tables.image :item="$item->image" /></flux:table.cell>
     @endif
     <flux:table.cell>{{ $item->title }}</flux:table.cell>
