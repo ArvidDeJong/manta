@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use Darvis\Manta\Models\Page;
 
-class Page extends Component
+class GetPage extends Component
 {
     /**
      * Create a new component instance.
@@ -24,6 +24,6 @@ class Page extends Component
     public function render(): View|Closure|string
     {
         $page = Page::find($this->id);
-        return view('components.website.page', compact('page'));
+        return view('manta::components.website.get-page', compact('page'));
     }
 }

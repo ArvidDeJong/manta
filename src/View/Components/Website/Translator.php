@@ -36,6 +36,6 @@ class Translator extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.website.translator');
+        return view('manta::components.website.translator');
     }
 }

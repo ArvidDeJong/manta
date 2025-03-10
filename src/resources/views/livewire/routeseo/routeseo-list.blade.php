@@ -2,7 +2,7 @@
          <x-manta.breadcrumb :$breadcrumb />
          <div class="mt-4 flex">
              <div class="flex-grow">
-                 <x-manta.buttons.large type="add" :href="route($this->route_name . '.create')" />
+                 <x-manta::buttons.large type="add" :href="route($this->route_name . '.create')" />
                  @if (count(getLocalesManta()) > 1)
                      <a href="javascript:;" wire:click="translateEmptyFields"
                          class="mr-2 rounded-sm bg-yellow-500 px-4 py-2 text-sm font-bold text-white hover:bg-yellow-600">

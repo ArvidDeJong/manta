@@ -6,9 +6,9 @@
     ])
     @if (!$item)
         <x-manta.alert type="warning" title="Het item bestaat nog niet" />
-        <x-manta.buttons.large type="add" :href="route($this->route_name . '.create', ['pid' => $pid, 'locale' => $locale])" />
+        <x-manta::buttons.large type="add" :href="route($this->route_name . '.create', ['pid' => $pid, 'locale' => $locale])" />
     @else
-        <x-manta.buttons.large type="edit" :href="route($this->route_name . '.update', [$this->route_name => $item])" />
+        <x-manta::buttons.large type="edit" :href="route($this->route_name . '.update', [$this->route_name => $item])" />
         <p>&nbsp;</p>
 
         @foreach ($fields as $key => $value)

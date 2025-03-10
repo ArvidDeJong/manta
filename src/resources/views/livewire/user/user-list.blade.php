@@ -2,7 +2,7 @@
     <x-manta.breadcrumb :$breadcrumb />
     <div class="mt-4 flex">
         <div class="flex-grow">
-            <x-manta.buttons.large type="add" :href="route($this->route_name . '.create')" />
+            <x-manta::buttons.large type="add" :href="route($this->route_name . '.create')" />
         </div>
         <div class="w-1/5">
             <x-manta.input.search />

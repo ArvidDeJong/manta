@@ -1,6 +1,6 @@
  <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
      <x-manta.breadcrumb :$breadcrumb />
-     <x-manta.buttons.large type="edit" :href="route('upload.update', ['upload' => $upload])" />
+     <x-manta::buttons.large type="edit" :href="route('upload.update', ['upload' => $upload])" />
      <ul class="justify-left flex flex-wrap gap-4 p-4">
          <li class="flex w-1/6 flex-col items-center" draggable="true">
              @if (!$upload->getImage()['src'])

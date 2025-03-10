@@ -38,5 +38,5 @@
         @endif
     </flux:table.cell>
 
-    <x-manta.flux.manta-flux-delete :$item :$route_name :$moduleClass uploads :$fields />
+    <x-manta::flux.manta-flux-delete :$item :$route_name :$moduleClass uploads :$fields />
 </flux:table.row>
