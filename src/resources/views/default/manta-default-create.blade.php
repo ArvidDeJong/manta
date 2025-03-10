@@ -7,5 +7,5 @@
 
     <div class="mb-8"></div>
     @include('manta::default.manta-default-openai-form')
-    @include('manta.includes.form_field_list')
+    @include('manta::includes.form_field_list')
 </flux:main>

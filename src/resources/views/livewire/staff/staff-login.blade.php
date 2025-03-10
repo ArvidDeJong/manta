@@ -1,6 +1,6 @@
-<flux:main container class="flex items-center justify-center min-h-screen">
+<flux:main container class="flex min-h-screen items-center justify-center">
     <flux:card class="w-full max-w-sm space-y-6">
-        <img class="w-auto h-10 mx-auto"
+        <img class="mx-auto h-10 w-auto"
             src="{{ env('DEFAULT_LOGO_LOGIN') ? env('DEFAULT_LOGO_LOGIN') : '/vendor/manta/default/img/logo-cutout.png' }}"
             alt="{{ env('DEFAULT_COMPANY') }}">
 
@@ -32,7 +32,7 @@
                 <flux:label for="remember" class="mt-3 text-sm text-gray-600">Onthouden</flux:label>
             </flux:field>
 
-            @include('manta.includes.form_error')
+            @include('manta::includes.form_error')
 
             <div class="mt-6">
                 <flux:button variant="primary" class="w-full" type="submit">Inloggen</flux:button>

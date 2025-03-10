@@ -40,13 +40,21 @@ if (!function_exists('manta_config')) {
 if (!function_exists('module_config')) {
     function module_config($name)
     {
+        $themeModuleConfigPath = app_path("../manta/modules/{$name}/{$name}Config_" . env('THEME') . ".php");
         $themeConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_" . env('THEME') . ".php");
         $defaultConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}_config.php");
         $fallbackConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_default.php");
-        $packageFallbackConfigPath = __DIR__ . "/../Livewire/Page/Config/PageConfig_default.php";
+        $packageFallbackConfigPath = __DIR__ . "/../Livewire/{$name}/Config/{$name}Config_default.php";
 
-        if (File::exists($themeConfigPath)) {
+        $defaultModuleConfigPath =  base_path('vendor/darvis/module-contact/src/config/module_contact.php');
+
+
+        if (File::exists($themeModuleConfigPath)) {
+            return include($themeModuleConfigPath);
+        } elseif (File::exists($themeConfigPath)) {
             return include($themeConfigPath);
+        } elseif (File::exists($defaultModuleConfigPath)) {
+            return include($defaultModuleConfigPath);
         } elseif (File::exists($defaultConfigPath)) {
             return include($defaultConfigPath);
         } elseif (File::exists($packageFallbackConfigPath)) {

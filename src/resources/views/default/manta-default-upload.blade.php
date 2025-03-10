@@ -6,6 +6,6 @@
         'tablistShow' => $tablistModuleShow,
     ])
 
-    <livewire:manta.upload.upload-form :model_class="$item" />
-    <livewire:manta.upload.upload-overview :model_class="$item" :key="'overview' . time()" />
+    <livewire:manta::upload.upload-form :model_class="$item" />
+    <livewire:manta::upload.upload-overview :model_class="$item" :key="'overview' . time()" />
 </div>

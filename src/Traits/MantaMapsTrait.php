@@ -4,7 +4,7 @@ namespace Darvis\Manta\Traits;
 
 use GuzzleHttp\Client;
 use Darvis\Manta\Models\Option;
-use App\Services\GoogleGeocodeService;
+use Darvis\Manta\Services\GoogleGeocodeService;
 
 trait MantaMapsTrait
 {

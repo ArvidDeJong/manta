@@ -42,6 +42,6 @@
             </div>
         </div>
     @endif
-    @include('manta.includes.form_field_list')
+    @include('manta::includes.form_field_list')
 
 </flux:main>

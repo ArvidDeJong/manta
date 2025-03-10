@@ -5,5 +5,5 @@
         'tabs' => $tablistModule,
         'tablistShow' => $tablistModuleShow,
     ])
-    @include('manta.includes.form_field_list-settings')
+    @include('manta::includes.form_field_list-settings')
 </flux:main>

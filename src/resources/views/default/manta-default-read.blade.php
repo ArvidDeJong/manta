@@ -27,7 +27,7 @@
                     }
 
                 @endphp
-                <x-manta.forms.read title="{{ $value['title'] }}" name="{{ $key }}" :value="$newvalue"
+                <x-manta::forms.read title="{{ $value['title'] }}" name="{{ $key }}" :value="$newvalue"
                     :type="isset($value['read_type']) ? $value['read_type'] : null" />
             @endif
         @endforeach

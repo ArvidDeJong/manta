@@ -25,7 +25,7 @@
              class="mt-10 space-y-8 border-b border-gray-900/10 pb-12 sm:space-y-0 sm:divide-y sm:divide-gray-900/10 sm:border-t sm:pb-0">
              @foreach ($fields as $key => $value)
                  @if (isset($value['read']) && (!isset($value['active']) || $value['active'] == true))
-                     <x-manta.forms.read title="{{ $value['title'] }}" name="{{ $key }}" :value="$upload->$key"
+                     <x-manta::forms.read title="{{ $value['title'] }}" name="{{ $key }}" :value="$upload->$key"
                          :type="isset($value['read_type']) ? $value['read_type'] : null" />
                  @endif
              @endforeach
