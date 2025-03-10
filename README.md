@@ -1,13 +1,18 @@
 # Manta CMS
 
 Een krachtig, out-of-the-box Content Management Systeem voor Laravel 11+ applicaties.
-Manta is gebaseerd op Flux 2.0 en geoptimaliseerd voor Livewire 3.0, wat resulteert in een moderne en snelle CMS oplossing die direct klaar is voor gebruik.
+Manta is geoptimaliseerd voor Livewire 3.0, wat resulteert in een moderne en snelle CMS oplossing die direct klaar is voor gebruik.
+
+## Versie
+
+Huidige versie: 1.0.4
 
 ## Vereisten
 
 - PHP 8.0 of hoger
-- Laravel 11 of hoger
-- Livewire 3.0 of hoger
+- Laravel 11 of 12
+- Livewire 3.0
+- Laravel Jetstream 5.0
 
 ## Installatie
 
@@ -34,12 +39,6 @@ Dit zal alle assets kopiëren naar de `public/vendor/manta` map van je applicati
 Publiceer de configuratie en views met:
 
 ```bash
-php artisan vendor:publish --provider="Darvis\\Manta\\MantaServiceProvider"
-```
-
-Of specifiek alleen de resources:
-
-```bash
 php artisan vendor:publish --tag=manta-resources
 ```
 
@@ -47,7 +46,15 @@ Dit zal de volgende bestanden publiceren:
 
 - Config bestanden
 - Views
-- Migraties
+- Vertalingen
+
+### Database Migraties
+
+Voer de migraties uit om de benodigde database tabellen aan te maken:
+
+```bash
+php artisan migrate
+```
 
 ## Features
 
@@ -57,15 +64,35 @@ Manta CMS biedt de volgende functionaliteit:
 
 - Volledig beheer van pagina's en content
 - Bestandsbeheer met geavanceerde upload mogelijkheden
-- Meertaligheid ondersteuning
+- Meertaligheid ondersteuning (NL/EN)
 - Gebruikersbeheer met uitgebreide rechtenstructuur
+- Staff authenticatie met eigen guard
+
+### Blade Componenten
+
+Manta bevat verschillende handige Blade componenten:
+
+- `<x-manta::website.page />`: Voor het weergeven van pagina's
+- `<x-manta::website.translator />`: Voor vertalingsfunctionaliteit
+
+### Livewire Componenten
+
+Manta bevat verschillende Livewire componenten, waaronder:
+
+- Page componenten
+- Staff componenten
+- User componenten
+- Upload componenten
+- Translator componenten
 
 ### Models
 
-De CMS bevat twee basis models:
+De CMS bevat verschillende basis models:
 
 - `Upload`: Voor het beheren van bestandsuploads
 - `User`: Een uitgebreid user model met extra functionaliteit
+- `Staff`: Voor beheerders met eigen authenticatie
+- `Page`: Voor het beheren van pagina's
 
 Je kunt deze models uitbreiden of gebruiken als basis voor je eigen models.
 
@@ -81,6 +108,8 @@ De CMS bevat verschillende handige traits die je kunt gebruiken om je models uit
 - `Sortable`: Voor het sorteren van models
 - `Website`: Voor website-specifieke functionaliteit
 - `WithSorting`: Voor geavanceerde sorteerfunctionaliteit
+- `StaffTrait`: Voor Staff functionaliteit
+- `TableRowTrait`: Voor tabelweergave
 
 ### Views
 
@@ -89,10 +118,6 @@ De CMS bevat een complete set van voorgedefinieerde views en layouts die je kunt
 ### Helpers
 
 Er zijn verschillende helper functies beschikbaar die je kunt gebruiken in je applicatie.
-
-### Database Migraties
-
-De CMS bevat alle benodigde database migraties die automatisch worden uitgevoerd tijdens de installatie.
 
 ## Uitbreiden
 
@@ -124,9 +149,13 @@ class YourModel extends Model
 }
 ```
 
-## Documentatie
+## Toekomstige ontwikkeling
 
-[Gedetailleerde documentatie over het gebruik van de CMS, models, traits, views en helpers volgt]
+Dit is slechts het begin voor Manta. Toekomstige updates zullen nieuwe functionaliteiten, verbeterde prestaties en uitgebreidere documentatie bevatten.
+
+## Feedback en bijdragen
+
+Feedback, bug reports en pull requests zijn van harte welkom. Samen kunnen we Manta nog beter maken.
 
 ## Licentie
 
