@@ -3,11 +3,11 @@
     "description": "Een krachtig, out-of-the-box Content Management Systeem voor Laravel",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "authors": [
         {
             "name": "Darvis",
-            "email": "jouw-email@example.com"
+            "email": "info@arvid.nl"
         }
     ],
     "require": {

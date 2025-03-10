@@ -20,6 +20,7 @@ class StaffList extends Component
     public function mount()
     {
         $this->getBreadcrumb();
+
         $this->sortBy = 'name';
     }
 

@@ -19,5 +19,5 @@
     </flux:table.cell>
     <flux:table.cell>{{ $item->lastLogin ? Carbon\Carbon::parse($item->lastLogin)->format('d-m-Y H:i') : null }}
     </flux:table.cell>
-    <x-manta.flux.manta-flux-delete :$item :$route_name :$moduleClass :translatable="false" />
+    <x-manta::flux.manta-flux-delete :$item :$route_name :$moduleClass :translatable="false" />
 </flux:table.row>

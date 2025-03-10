@@ -23,7 +23,7 @@ if (!function_exists('manta_config')) {
         $themeConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_" . env('THEME') . ".php");
         $defaultConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}_config.php");
         $appFallbackConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_default.php");
-        $packageFallbackConfigPath = __DIR__ . "/../Livewire/Page/Config/PageConfig_default.php";
+        $packageFallbackConfigPath = __DIR__ . "/../Livewire/{$name}/Config/{$name}Config_default.php";
 
         if (File::exists($themeConfigPath)) {
             return include($themeConfigPath);
