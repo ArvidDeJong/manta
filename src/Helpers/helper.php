@@ -17,20 +17,55 @@ if (!function_exists('cms_config')) {
         return include($path);
     }
 }
-
-if (!function_exists('module_config')) {
-    function module_config($name)
+if (!function_exists('manta_config')) {
+    function manta_config($name)
     {
         $themeConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_" . env('THEME') . ".php");
         $defaultConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}_config.php");
-        $fallbackConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_default.php");
+        $appFallbackConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_default.php");
+        $packageFallbackConfigPath = __DIR__ . "/../Livewire/{$name}/Config/{$name}Config_default.php";
 
         if (File::exists($themeConfigPath)) {
             return include($themeConfigPath);
         } elseif (File::exists($defaultConfigPath)) {
             return include($defaultConfigPath);
+        } elseif (File::exists($appFallbackConfigPath)) {
+            return include($appFallbackConfigPath);
         } else {
+            return include($packageFallbackConfigPath);
+        }
+    }
+}
+
+if (!function_exists('module_config')) {
+    function module_config($name, $module = null)
+    {
+
+        $themeModuleConfigPath = app_path("../manta/modules/{$name}/{$name}Config_" . env('THEME') . ".php");
+        $themeConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_" . env('THEME') . ".php");
+        $defaultConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}_config.php");
+        $fallbackConfigPath = app_path("/Livewire/Manta/{$name}/Config/{$name}Config_default.php");
+        $packageFallbackConfigPath = __DIR__ . "/../Livewire/{$name}/Config/{$name}Config_default.php";
+
+        $module = $module ?? $name;
+        $module = strtolower($module);
+        $defaultModuleConfigPath =  base_path("vendor/darvis/module-{$module}/src/config/module_{$name}.php");
+
+        if (File::exists($themeModuleConfigPath)) {
+            return include($themeModuleConfigPath);
+        } elseif (File::exists($themeConfigPath)) {
+            return include($themeConfigPath);
+        } elseif (File::exists($defaultModuleConfigPath)) {
+
+            return include($defaultModuleConfigPath);
+        } elseif (File::exists($defaultConfigPath)) {
+            return include($defaultConfigPath);
+        } elseif (File::exists($packageFallbackConfigPath)) {
+            return include($packageFallbackConfigPath);
+        } elseif (File::exists($fallbackConfigPath)) {
             return include($fallbackConfigPath);
+        } else {
+            return include($defaultModuleConfigPath);
         }
     }
 }

@@ -2,19 +2,22 @@
 
 namespace Darvis\Manta\Models;
 
-use Manta\Notifications\StaffResetPasswordNotification;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Darvis\Manta\Notifications\StaffResetPasswordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Darvis\Manta\Traits\HasUploadsTrait;
+use Laravel\Fortify\TwoFactorAuthenticatable;
 
-class Staff  extends Authenticatable
+use Laravel\Sanctum\HasApiTokens;
+
+class Staff extends Authenticatable
 {
+    use HasApiTokens;
     use HasFactory;
-    use SoftDeletes;
     use Notifiable;
-    use HasUploadsTrait;
+    use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -47,25 +50,37 @@ class Staff  extends Authenticatable
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var array
+     * @var array<int, string>
      */
-    protected $hidden = [];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'data' => 'array',
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
 
     /**
      * The accessors to append to the model's array form.
      *
-     * @var array
+     * @var array<int, string>
      */
-    protected $appends = [];
+    protected $appends = [
+        'profile_photo_url',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+            'data' => 'array',
+        ];
+    }
 
     /**
      * @param mixed $value 
