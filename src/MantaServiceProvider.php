@@ -5,6 +5,7 @@ namespace Darvis\Manta;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
 use Darvis\Manta\Http\Middleware\GetRouteSeo;
+use Darvis\Manta\Http\Middleware\StaffAuthenticate;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -16,6 +17,7 @@ class MantaServiceProvider extends ServiceProvider
     {
         $router = $this->app->make(Router::class);
         $router->aliasMiddleware('route.seo', GetRouteSeo::class);
+        $router->aliasMiddleware('auth.staff', StaffAuthenticate::class);
 
         // Automatisch alle Livewire componenten registreren
         $this->registerLivewireComponents();
