@@ -1,142 +1,156 @@
 # Manta CMS
 
-Een krachtig, out-of-the-box Content Management Systeem voor Laravel 11+ applicaties.
-Manta is geoptimaliseerd voor Livewire 3.0, wat resulteert in een moderne en snelle CMS oplossing die direct klaar is voor gebruik.
+A powerful, out-of-the-box Content Management System for Laravel 11+ applications.
+Manta is optimized for Livewire 3.0, resulting in a modern and fast CMS solution that's ready to use.
 
-## Versie
+## Version
 
-Huidige versie: 1.0.4
+Current version: 1.0.4
 
-## Vereisten
+## Requirements
 
-- PHP 8.0 of hoger
-- Laravel 11 of 12
+- PHP 8.0 or higher
+- Laravel 11 or 12
 - Livewire 3.0
 - Laravel Jetstream 5.0
 
-## Installatie
+## Installation
 
-Je kunt Manta CMS installeren via Composer:
+You can install Manta CMS via Composer:
 
 ```bash
 composer require darvis/manta
 ```
 
-De service provider wordt automatisch geregistreerd via Laravel's package discovery.
+The service provider will be automatically registered via Laravel's package discovery.
 
-### Assets Publiceren
+### Publishing Assets
 
-Je kunt de assets (CSS, JavaScript, afbeeldingen) publiceren met:
+You can publish the assets (CSS, JavaScript, images) with:
 
 ```bash
 php artisan vendor:publish --tag=manta-assets
 ```
 
-Dit zal alle assets kopiëren naar de `public/vendor/manta` map van je applicatie.
+This will copy all assets to your application's `public/vendor/manta` directory.
 
-### Configuratie en Views
+### Configuration and Views
 
-Publiceer de configuratie en views met:
+Publish the configuration and views with:
 
 ```bash
 php artisan vendor:publish --tag=manta-resources
 ```
 
-Dit zal de volgende bestanden publiceren:
+This will publish the following files:
 
-- Config bestanden
+- Config files
 - Views
-- Vertalingen
+- Translations
 
-### Database Migraties
+### Database Migrations and Seeders
 
-Voer de migraties uit om de benodigde database tabellen aan te maken:
+Run the migrations to create the required database tables:
 
 ```bash
 php artisan migrate
 ```
 
+Publish and run the database seeders:
+
+```bash
+# Publish all seeders
+php artisan vendor:publish --tag=manta-seeders
+
+# Run all seeders at once
+php artisan db:seed --class="Database\Seeders\MantaDatabaseSeeder"
+
+# Or run individual seeders:
+php artisan db:seed --class="Database\Seeders\MantaStaffSeeder"  # Only seed staff
+php artisan db:seed --class="Database\Seeders\MantaUserSeeder"   # Only seed users
+```
+
 ## Features
 
-Manta CMS biedt de volgende functionaliteit:
+Manta CMS offers the following functionality:
 
-### Content Beheer
+### Content Management
 
-- Volledig beheer van pagina's en content
-- Bestandsbeheer met geavanceerde upload mogelijkheden
-- Meertaligheid ondersteuning (NL/EN)
-- Gebruikersbeheer met uitgebreide rechtenstructuur
-- Staff authenticatie met eigen guard
+- Full page and content management
+- File management with advanced upload capabilities
+- Multilingual support (NL/EN)
+- User management with extensive permission structure
+- Staff authentication with dedicated guard
 
-### Blade Componenten
+### Blade Components
 
-Manta bevat verschillende handige Blade componenten:
+Manta includes several useful Blade components:
 
-- `<x-manta::website.page />`: Voor het weergeven van pagina's
-- `<x-manta::website.translator />`: Voor vertalingsfunctionaliteit
+- `<x-manta::website.page />`: For displaying pages
+- `<x-manta::website.translator />`: For translation functionality
 
-### Livewire Componenten
+### Livewire Components
 
-Manta bevat verschillende Livewire componenten, waaronder:
+Manta includes various Livewire components, including:
 
-- Page componenten
-- Staff componenten
-- User componenten
-- Upload componenten
-- Translator componenten
+- Page components
+- Staff components
+- User components
+- Upload components
+- Translator components
 
 ### Models
 
-De CMS bevat verschillende basis models:
+The CMS includes several base models:
 
-- `Upload`: Voor het beheren van bestandsuploads
-- `User`: Een uitgebreid user model met extra functionaliteit
-- `Staff`: Voor beheerders met eigen authenticatie
-- `Page`: Voor het beheren van pagina's
+- `Upload`: For managing file uploads
+- `User`: An extensive user model with additional functionality
+- `Staff`: For administrators with dedicated authentication
+- `Page`: For managing pages
 
-Je kunt deze models uitbreiden of gebruiken als basis voor je eigen models.
+You can extend these models or use them as a base for your own models.
 
 ### Traits
 
-De CMS bevat verschillende handige traits die je kunt gebruiken om je models uit te breiden:
+The CMS includes several useful traits that you can use to extend your models:
 
-- `HasTranslations`: Voor het toevoegen van vertalingen aan je models
-- `HasUploads`: Voor het beheren van bestandsuploads
-- `MantaMaps`: Voor integratie met kaartfunctionaliteit
-- `MantaPagerow`: Voor paginering functionaliteit
-- `Manta`: Basis Manta functionaliteit
-- `Sortable`: Voor het sorteren van models
-- `Website`: Voor website-specifieke functionaliteit
-- `WithSorting`: Voor geavanceerde sorteerfunctionaliteit
-- `StaffTrait`: Voor Staff functionaliteit
-- `TableRowTrait`: Voor tabelweergave
+- `HasTranslations`: For adding translations to your models
+- `HasUploads`: For managing file uploads
+- `MantaMaps`: For map functionality integration
+- `MantaPagerow`: For pagination functionality
+- `Manta`: Base Manta functionality
+- `Sortable`: For model sorting
+- `Website`: For website-specific functionality
+- `WithSorting`: For advanced sorting functionality
+- `StaffTrait`: For Staff functionality
+- `TableRowTrait`: For table display
 
 ### Views
 
-De CMS bevat een complete set van voorgedefinieerde views en layouts die je kunt gebruiken of uitbreiden.
+The CMS includes a complete set of predefined views and layouts that you can use or extend.
 
 ### Helpers
 
-Er zijn verschillende helper functies beschikbaar die je kunt gebruiken in je applicatie.
+Various helper functions are available for use in your application.
 
-## Uitbreiden
+## Extending
 
-### Models Uitbreiden
+### Extending Models
 
-Je kunt de basis models uitbreiden:
+You can extend the base models:
 
 ```php
 use Darvis\Manta\Models\User as MantaUser;
 
 class User extends MantaUser
 {
-    // Je eigen functionaliteit hier
+    // Your custom functionality here
 }
 ```
 
-### Traits Gebruiken
+### Using Traits
 
-Je kunt de traits toevoegen aan je models:
+You can add the traits to your models:
 
 ```php
 use Darvis\Manta\Traits\HasTranslations;
@@ -149,14 +163,14 @@ class YourModel extends Model
 }
 ```
 
-## Toekomstige ontwikkeling
+## Future Development
 
-Dit is slechts het begin voor Manta. Toekomstige updates zullen nieuwe functionaliteiten, verbeterde prestaties en uitgebreidere documentatie bevatten.
+This is just the beginning for Manta. Future updates will include new features, improved performance, and more extensive documentation.
 
-## Feedback en bijdragen
+## Feedback and Contributions
 
-Feedback, bug reports en pull requests zijn van harte welkom. Samen kunnen we Manta nog beter maken.
+Feedback, bug reports, and pull requests are welcome. Together we can make Manta even better.
 
-## Licentie
+## License
 
-Deze CMS is open-source software gelicenseerd onder de [MIT licentie](LICENSE).
+This CMS is open-source software licensed under the [MIT license](LICENSE).

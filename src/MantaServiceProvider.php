@@ -10,6 +10,7 @@ use Livewire\Livewire;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\App;
 
 class MantaServiceProvider extends ServiceProvider
 {
@@ -40,6 +41,15 @@ class MantaServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+
+        // Registreer de database seeders
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/database/seeders/StaffSeeder.php' => database_path('seeders/MantaStaffSeeder.php'),
+                __DIR__ . '/database/seeders/UserSeeder.php' => database_path('seeders/MantaUserSeeder.php'),
+                __DIR__ . '/database/seeders/DatabaseSeeder.php' => database_path('seeders/MantaDatabaseSeeder.php'),
+            ], 'manta-seeders');
+        }
     }
 
     /**
