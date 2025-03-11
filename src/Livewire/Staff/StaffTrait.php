@@ -2,7 +2,7 @@
 
 namespace Darvis\Manta\Livewire\Staff;
 
-use Darvis\Manta\Models\Staff;
+use App\Models\Staff;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Route;
 use Livewire\Attributes\Locked;

@@ -2,7 +2,7 @@
 
 namespace Darvis\Manta\Livewire\Staff;
 
-use Darvis\Manta\Models\Staff;
+use App\Models\Staff;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Darvis\Manta\Traits\MantaTrait;

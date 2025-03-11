@@ -19,7 +19,7 @@ class MantaServiceProvider extends ServiceProvider
 
         // Automatisch alle Livewire componenten registreren
         $this->registerLivewireComponents();
-        
+
         // Registreer het PageListRow Volt component als Blade component
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'manta');
         $this->loadTranslationsFrom(__DIR__ . '/lang', 'manta');
@@ -29,8 +29,6 @@ class MantaServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/resources/views' => resource_path('views/vendor/manta'),
-            __DIR__ . '/config/manta.php' => config_path('manta.php'),
-            __DIR__ . '/config/manta_cms.php' => config_path('manta_cms.php'),
             __DIR__ . '/lang' => resource_path('lang/vendor/manta'),
         ], 'manta-resources');
 
@@ -94,7 +92,7 @@ class MantaServiceProvider extends ServiceProvider
 
         // Registreer de Translator component
         Blade::component('manta::manta.translator', \Darvis\Manta\View\Components\Manta\Translator::class);
-        
+
         // Registreer de MantaPage component
         Blade::component('manta::manta.manta-page', \Darvis\Manta\View\Components\Manta\MantaPage::class);
 
@@ -111,9 +109,11 @@ class MantaServiceProvider extends ServiceProvider
             $fullClassName = 'Darvis\\Manta\\View\\Components\\' . $className;
 
             // Controleer of de klasse bestaat en niet al expliciet is geregistreerd
-            if (class_exists($fullClassName) && 
-                $fullClassName !== \Darvis\Manta\View\Components\Manta\Translator::class && 
-                $fullClassName !== \Darvis\Manta\View\Components\Manta\MantaPage::class) {
+            if (
+                class_exists($fullClassName) &&
+                $fullClassName !== \Darvis\Manta\View\Components\Manta\Translator::class &&
+                $fullClassName !== \Darvis\Manta\View\Components\Manta\MantaPage::class
+            ) {
                 // Bepaal de component alias
                 $alias = Str::kebab(Str::afterLast($className, '\\'));
                 $namespace = Str::kebab(Str::beforeLast($className, '\\'));
@@ -146,9 +146,6 @@ class MantaServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/manta.php', 'manta');
-        $this->mergeConfigFrom(__DIR__ . '/config/manta_cms.php', 'manta_cms');
-
         require_once __DIR__ . '/Helpers/helper.php';
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Darvis\Manta\Livewire\Staff;
 
-use Darvis\Manta\Models\Staff;
+use App\Models\Staff;
 use Darvis\Manta\Traits\MantaTrait;
 use Darvis\Manta\Traits\SortableTrait;
 use Darvis\Manta\Traits\WithSortingTrait;

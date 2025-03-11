@@ -4,7 +4,7 @@ namespace Darvis\Manta\Livewire\Staff;
 
 use Flux\Flux;
 use Livewire\Component;
-use Darvis\Manta\Models\Staff;
+use App\Models\Staff;
 use Darvis\Manta\Traits\MantaTrait;
 use Illuminate\Support\Facades\Hash;
 
