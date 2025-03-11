@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'CMS' }}</title>
@@ -56,17 +57,17 @@
         }
     </style>
     @stack('styles')
-    @fluxAppearance
+
 </head>
 
-<body class="dark:bg-zinc-800 min-h-screen bg-white">
+<body class="min-h-screen bg-white dark:bg-zinc-800">
     <x-manta.header-flux />
     {{ $slot }}
     <flux:toast position="top right" />
     {{-- <footer class="sticky bottom-0 p-4 text-center bg-white text-slate-400 dark:bg-zinc-800">
         {{ date('Y') }} <a href="https://arvid.nl">ARVID.NL</a>
     </footer> --}}
-    @fluxScripts
+
     @stack('scripts')
     <script src="/vendor/manta/default/js/cms.js"></script>
     <script src="{{ env('SENTRY_REPLAY_URL') }}" crossorigin="anonymous"></script>
@@ -75,6 +76,8 @@
 
         document.addEventListener('livewire:navigated', () => {});
     </script>
+    @fluxScripts
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@ namespace Darvis\Manta\Livewire\Staff;
 
 use Flux\Flux;
 use Illuminate\Http\Request;
-use App\Models\Staff;
+use Darvis\Manta\Models\Staff;
 use Darvis\Manta\Models\StaffLog;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
