@@ -1,5 +1,5 @@
  <form wire:submit="save" class="space-y-6">
-
+     {{-- {!! dd($fields) !!} --}}
      @foreach ($fields as $key => $value)
          @if (isset($value['type']) &&
                  (!isset($value['active']) || $value['active'] == true) &&
@@ -8,10 +8,11 @@
              @if ($value['type'] == 'text' || $value['type'] == 'email' || $value['type'] == 'password')
                  <flux:field>
                      @if (isset($value['required']) && $value['required'] == true)
-                         <flux:label badge="Verplicht">{{ $value['title'] }}</flux:label>
+                         <flux:label badge="Verplicht">{{ $value['title'] }} </flux:label>
                      @else
                          <flux:label>{{ $value['title'] }}</flux:label>
                      @endif
+
                      @if ($value['type'] == 'password')
                          <flux:input type="password" viewable wire:model="{{ $key }}">
                              <x-slot name="iconTrailing">

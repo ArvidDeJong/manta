@@ -15,5 +15,6 @@
         <flux:button size="sm" icon="globe-alt" wire:click="translate">Vul lege vertalingen</flux:button>
     @endif
     <br> <br>
+
     @include('manta::includes.form_field_list')
 </flux:main>

@@ -8,16 +8,15 @@
     <meta name="author" content="Darvis | Arvid de Jong | info@arvid.nl">
     <link rel="icon" type="image/png" href="/vendor/manta/default/img/favicon.png">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireStyles
+    @vite(['resources/css/app.css'])
+
     @fluxAppearance
 </head>
 
-<body class="min-h-screen antialiased bg-white dark:bg-zinc-800">
+<body class="min-h-screen bg-white antialiased dark:bg-zinc-800">
 
     {{ $slot }}
 
-    @livewireScripts
     @fluxScripts
     <flux:toast position="top right" />
 

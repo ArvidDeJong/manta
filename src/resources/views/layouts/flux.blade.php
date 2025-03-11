@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&display=swap" rel="stylesheet">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
@@ -38,7 +38,7 @@
     <script src="/vendor/manta/libs/sortablejs/sortablejs.min.js"></script>
 
     <script src="/vendor/manta/libs/tinymce-7.6.0/js/tinymce/tinymce.min.js"></script>
-    <script type="text/javascript" src="/vendor/manta/js/passive-events-tinymce.js"></script>
+    <script type="text/javascript" src="/vendor/manta/default/js/passive-events-tinymce.js"></script>
 
     <script>
         var tiny_css = '{{ env('TINY_CSS') }}'; //'/css/blaad.css';
@@ -59,7 +59,7 @@
     @fluxAppearance
 </head>
 
-<body class="min-h-screen bg-white dark:bg-zinc-800">
+<body class="dark:bg-zinc-800 min-h-screen bg-white">
     <x-manta.header-flux />
     {{ $slot }}
     <flux:toast position="top right" />
@@ -68,7 +68,7 @@
     </footer> --}}
     @fluxScripts
     @stack('scripts')
-    <script src="/vendor/manta/js/cms.js"></script>
+    <script src="/vendor/manta/default/js/cms.js"></script>
     <script src="{{ env('SENTRY_REPLAY_URL') }}" crossorigin="anonymous"></script>
     <script>
         document.addEventListener('livewire:initialized', () => {});

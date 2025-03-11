@@ -56,13 +56,16 @@ if (!function_exists('module_config')) {
         } elseif (File::exists($themeConfigPath)) {
             return include($themeConfigPath);
         } elseif (File::exists($defaultModuleConfigPath)) {
+
             return include($defaultModuleConfigPath);
         } elseif (File::exists($defaultConfigPath)) {
             return include($defaultConfigPath);
         } elseif (File::exists($packageFallbackConfigPath)) {
             return include($packageFallbackConfigPath);
-        } else {
+        } elseif (File::exists($fallbackConfigPath)) {
             return include($fallbackConfigPath);
+        } else {
+            return include($defaultModuleConfigPath);
         }
     }
 }
