@@ -149,6 +149,7 @@ trait MantaTrait
                 }
             }
         } elseif ($this->itemOrg) {
+            // dd($this->route_name . '.read');
             $tablist[] = [
                 'name' => $this->tab_title ? $this->itemOrg->$tab_title : $this->itemOrg->title,
                 'title' => $this->tab_title ? $this->itemOrg->$tab_title : $this->itemOrg->title,
